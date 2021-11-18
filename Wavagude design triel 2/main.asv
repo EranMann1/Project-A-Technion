@@ -7,11 +7,9 @@
 clear all;
 Title = '2D constructive and distructive interfirance very large space with wide gap big n';
 %% louding relevent informatoin
-path=pwd;
-cd('..');
-cd([pwd '\designing reflective serface\after ariel meating 3']);
+cd([pwd '..\designing reflective serface\after ariel meating 3']);
 reflective_surface = load('FinalReflector.mat');
-cd(path);
+cd('C:\Users\user\OneDrive - Technion\Documents\MATLAB\technion\semester 5\project a\Wavagude design triel 2');
 Lambda = reflective_surface.Lambda;
 k = reflective_surface.k;
 eta = reflective_surface.eta;
