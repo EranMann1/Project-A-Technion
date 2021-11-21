@@ -5,7 +5,7 @@
 % plots the resulting fields
 
 clear all;
-Title = '2D constructive and distructive interfirance very large space with wide gap big n';
+Title = '2D random H interfirance very large space far from zero';
 %% louding relevent informatoin
 path=pwd;
 cd('..');
@@ -28,15 +28,15 @@ r_eff = reflective_surface.reff;
 clear reflective_surface;
 
 %% calculating the relevent waveguides
-H_const = 20*lambda/(2*(1/cos(theta_in)+1/cos(theta_out)));
-H_dist = 20*lambda/(4*(1/cos(theta_in)+1/cos(theta_out)));
+H_const = 3.718*lambda/(2*(1/cos(theta_in)+1/cos(theta_out)));
+H_dist = 3.718*lambda/(4*(1/cos(theta_in)+1/cos(theta_out)));
 D=0;
 constructive_waveguide = createWaveguide(D,H_const,ds,hs,zs);
 distructive_waveguide = createWaveguide(D,H_dist,ds,hs,zs);
 
 %% parameters of grid:
-z_const = linspace(-2*max(constructive_waveguide.Hs),2*max(constructive_waveguide.Hs),100);
-z_dist = linspace(-2*max(constructive_waveguide.Hs),2*max(constructive_waveguide.Hs),100);
+z_const = linspace(-2*max(constructive_waveguide.Hs),2*max(constructive_waveguide.Hs),60);
+z_dist = linspace(-2*max(constructive_waveguide.Hs),2*max(constructive_waveguide.Hs),60);
 y = linspace(-5*Lambda,5*Lambda,60); %on source
 % y = linspace(20*Lambda,30*Lambda,100); %far from sorce
 k_y=zeros(402,1);

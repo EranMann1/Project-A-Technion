@@ -5,11 +5,13 @@
 % plots the resulting fields
 
 clear all;
-Title = '2D constructive and distructive interfirance very large space with wide gap big n';
+Title = '2D random H interfirance very large space with wide gap big n';
 %% louding relevent informatoin
-cd([pwd '..\designing reflective serface\after ariel meating 3']);
+path=pwd;
+cd('..');
+cd([pwd '\designing reflective serface\after ariel meating 3']);
 reflective_surface = load('FinalReflector.mat');
-cd('C:\Users\user\OneDrive - Technion\Documents\MATLAB\technion\semester 5\project a\Wavagude design triel 2');
+cd(path);
 Lambda = reflective_surface.Lambda;
 k = reflective_surface.k;
 eta = reflective_surface.eta;
@@ -26,7 +28,7 @@ r_eff = reflective_surface.reff;
 clear reflective_surface;
 
 %% calculating the relevent waveguides
-H_const = 20*lambda/(2*(1/cos(theta_in)+1/cos(theta_out)));
+H_const = 3*lambda/(2*(1/cos(theta_in)+1/cos(theta_out)));
 H_dist = 20*lambda/(4*(1/cos(theta_in)+1/cos(theta_out)));
 D=0;
 constructive_waveguide = createWaveguide(D,H_const,ds,hs,zs);

@@ -18,7 +18,7 @@ function E_out = find_generated_field(y,z,waveguide,k,Lambda,eta,I_0,k_y,I_norm,
     
     k_z = conj(sqrt(k^2-k_y.^2));
     %sumTensor = exp(-1j*(k_z*abs(z-z_0)+k_y*y_0+Alphas.*(y - Ds)+Betas.*abs(z-Hs)))./k_z.*I_norm./Betas;
-    sumTensor = exp(-1j*(k_z*abs(z-z_0)+k_y*(y_0-y)+Alphas.*(y - Ds)+Betas.*abs(z-Hs)))./k_z.*I_norm./Betas;
+    sumTensor = exp(-1j*(k_z*abs(z-z_0)+k_y*(y-y_0)+Alphas.*(y - Ds)+Betas.*abs(z-Hs)))./k_z.*I_norm./Betas;
     %E_out = k^2*eta^2*I_0/4/Lambda*sum(sumTensor,'all');
     E_out = k^2*eta^2*I_0/4/Lambda*trapz(k_y,sum(sumTensor,[2,3]),1);
 end
