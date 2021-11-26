@@ -66,12 +66,10 @@ ylabel('ky*lambda/2pi');
 zlabel('log(det(A))');
 
 %% D changes H=lambda
-H_const = cos(theta_in)*cos(theta_out)/2/(cos(theta_in)+cos(theta_out));
+H=H_const;
 
-H=H_const/2;
-
-numD = 100;
-numKy = 1000;
+numD = 200;
+numKy = 400;
 N_sumation=100;
 Ky = k*linspace(-1,1,numKy);
 Ds = linspace(0,Lambda,numD);
@@ -79,11 +77,11 @@ Dets = zeros(numD,numKy);
 for index=1:numD
     index
     waveguide = createWaveguide(Ds(index),H,ds,hs,zs);
-    Dets4(index,:)=detsOfKy(waveguide,k,Ky,N_sumation,eta,r_eff,Lambda);
+    Dets3(index,:)=detsOfKy(waveguide,k,Ky,N_sumation,eta,r_eff,Lambda);
 end
 
 figure;
-imagesc(Ds/Lambda,Ky/k,log(abs(Dets4)')/log(10));
+imagesc(Ds/Lambda,Ky/k,log(abs(Dets3)')/log(10));
 colorbar;
 xlabel('D/Lambda');
 ylabel('ky*lambda/2pi');
