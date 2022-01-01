@@ -5,12 +5,12 @@
 % plots the resulting fields
 
 clear all;
-Title = 'Now with small thickness reflective surface';
+Title = 'Now with small thickness reflective s';
 %% louding relevent informatoin
 path=pwd;
 cd('..');
 cd([pwd '\designing reflective serface\after ariel meating 3']);
-reflective_surface = load('realy small thickness surface.mat');
+reflective_surface = load('FinalReflector.mat');
 cd(path);
 lambda = reflective_surface.lambda;
 Lambda = reflective_surface.Lambda/lambda;
