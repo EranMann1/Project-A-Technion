@@ -5,7 +5,7 @@
 % plots the resulting fields
 
 clear all;
-Title = 'Now with small thickness reflective surface 2 with more persition';
+Title = 'Now with small thickness reflective surface 2 with more persition far from source';
 %% louding relevent informatoin
 path=pwd;
 cd('..');

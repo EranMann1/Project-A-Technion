@@ -1,0 +1,28 @@
+
+clear;
+close all;
+
+load('C:\Users\eranmann\OneDrive - Technion\Documents\GitHub\Project-A-Technion\designing reflective serface\after ariel meating 3\realy small thickness surface.mat','lambda');
+title='first triel.mat';
+thickness=(lambda/2:lambda/2:10*lambda);
+real_thickness=thickness;
+detA=zeros(1,length(thickness));
+for i=1:length(thickness)
+    clear;
+    load('var.mat')
+    save('var.mat')
+    clear;
+    disp(['starting iteration ' num2str(i) ' out of ' num2str(length(thickness))]);
+    surface = reflective(thickness(i));
+    disp('Second function of itteration');
+    detA(i) = MinimumDetA(surface);
+    real_thickness(i)=max(surface.Hs);
+    save(title);
+end
+
+figure
+plot(real_thickness,detA);
+xlabel('max reflective layer thickness')
+ylabel('det(A) of best conductive mode');
+    
+save(title);
